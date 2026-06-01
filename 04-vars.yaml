@@ -4,7 +4,7 @@
   vars:
     COURSE: "Ansible"
     TRAINER: "Sivakumar"
-    Duration: "150HRS"
+    DURATION: "150HRS"
   tasks:
   - debug:
       msg: "Hi, I am learning {{ COURSE }}, Trainer is {{ TRAINER }}, Duriation is {{ DURATION }}"
