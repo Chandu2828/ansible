@@ -1,0 +1,25 @@
+- name: "Purna CHand CH" # inclue "" if there is a space
+  dob: "28-04-1999"
+  mobile: "1234455556"
+  addressses:
+  - type: perm
+    street: 101 # no need of quotes for numbers
+    apartmentName: "Balaji Apartments"
+    city: "HYD"
+  - type: current
+    street: 101
+    apartmentName: "Balaji Apartments"
+    city: "HYD"
+- name: "Purna CHand CH" 
+  dob: "28-04-1999"
+  mobile: "1234455556"
+  addressses:
+  - type: perm
+    street: 101
+    apartmentName: "Balaji Apartments"
+    city: "HYD"
+  - type: current
+    street: 101
+    apartmentName: "Balaji Apartments"
+    city: "HYD"   
+    
