@@ -4,3 +4,6 @@
   - name: print gathered facts
     debug:
       msg: "{{ ansible_facts}}"
+
+
+# Ansible decides based on these facts and understands the distribution. SO then it will change the package to dnf if it is redhat and apt-get if it is debian
