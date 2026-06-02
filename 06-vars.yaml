@@ -1,0 +1,9 @@
+- name: deom on vars files
+  hosts: local
+  connection: local
+  vars:
+  - course.yaml
+  tasks:
+  - name: print variables information
+    debug:
+      msg: "Hi, I am learning {{ COURSE }}, Trainer {{ TRAINER }}, Duration {{ DURATION }}"
