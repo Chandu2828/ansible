@@ -13,5 +13,5 @@
     vars:
       full_name: "Chandu from task level"
     debug:
-      mgs: "Hi {{ full_name}}"
+      msg: "Hi {{ full_name}}"
       
