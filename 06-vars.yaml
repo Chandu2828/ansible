@@ -1,7 +1,7 @@
 - name: deom on vars files
   hosts: local
   connection: local
-  vars:
+  vars_files:
   - course.yaml
   tasks:
   - name: print variables information
