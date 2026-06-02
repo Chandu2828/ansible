@@ -2,8 +2,8 @@
   hosts: node
   vars:
     full_name: "Chandu from play"
-  vars_files:
-  - course.yaml
+  # vars_files:
+  # - course.yaml
   vars_prompt:
   - name: full name
     prompt: "Please enter your full_name"
