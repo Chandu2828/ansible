@@ -10,5 +10,5 @@
     name: is even
   - name: is odd
     debug:
-      msg: "given number: {{ give_number}} is odd"
+      msg: "given number: {{ given_number}} is odd"
     when: given_number %2 != 0
