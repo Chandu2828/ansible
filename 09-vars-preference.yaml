@@ -1,0 +1,17 @@
+- name: variables preference
+  hosts: node
+  vars:
+    full_name: "Chandu from play"
+  vars_files:
+  - course.yaml
+  vars_prompt:
+  - name: full name
+    prompt: "Please enter your full_name"
+    private: false
+  tasks:
+  - name: print vars preference
+    vars:
+      full_name: "Chandu from task level"
+    debug:
+      mgs: "Hi {{ full_name}}"
+      
