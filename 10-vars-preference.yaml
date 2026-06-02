@@ -1,7 +1,7 @@
 - name: variables preference
   hosts: node
-  vars:
-    full_name: "Chandu from play"
+  # vars:
+  #   full_name: "Chandu from play"
   # vars_files:
   # - course.yaml
   vars_prompt:
