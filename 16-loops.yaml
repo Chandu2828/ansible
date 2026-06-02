@@ -5,7 +5,7 @@
   - name: print names
     debug:
       msg: "Hi {{ item }}" # item is reserved special variable
-    loops:
+    loop:
     - Purna
     - Chand
     - Chandu
