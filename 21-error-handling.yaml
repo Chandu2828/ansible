@@ -5,10 +5,10 @@
   - name: check roboshop user exist or not
     command: id roboshop
     register: user_output
-    igonore_errors: true
+    ignore_errors: true
   
   - name: print user_output
     debug:
       msg: "{{ user_output }}"
 
-      
+
