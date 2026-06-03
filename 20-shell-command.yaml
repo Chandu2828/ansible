@@ -6,6 +6,10 @@
     # command: cat /etc/passwd | grep root
     shell: cat /etc/passwd | grep root
     register: users_output
+
   - name: print users_output
     debug:
       msg: "{{ users_output }}"
+
+  - name: list files
+    command: ls -ltr > /tmp/files.txt
