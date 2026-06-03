@@ -14,7 +14,7 @@
 
   - name: create user
     command: useradd roboshop
-    when: user_outpt.rc != 0
+    when: user_output.rc != 0
 
 
 
