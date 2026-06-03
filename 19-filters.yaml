@@ -9,6 +9,7 @@
       environment: dev
     full_name: Purna Chand 
     ip_address_1: 1000.890.398.7898
+    ip_address_2: 172.76.67.69
     tagsList: [
       {
         "key": "name",
@@ -47,4 +48,9 @@
   - name: check ipv4 ip_address_1
     debug:
       msg: "{{ ip_address_1 | ansible.utils.ipv4 }}"
+    # ansible.utils.ipv4 require netaddr package, use pip3 install netaddr command to install the package
+  - name: check ipv4 ip_address_2
+    debug:
+      msg: "{{ ip_address_2 | ansible.utils.ipv4 }}"
+
 
