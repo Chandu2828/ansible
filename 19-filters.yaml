@@ -1,0 +1,13 @@
+- name: demo on filters
+  hosts: local
+  connection: local
+  vars:
+    topics: Linux, Shell, Ansible, Terraform
+  tasks:
+  - name: print the string as list
+    debug:
+      msg:  "Topics are: {{ topics | split (',') }}"
+  
+  # - name: set default value
+  #   debug:
+  #     msg: "Hi {{ GREETING | default ('Good Morning') }}"
