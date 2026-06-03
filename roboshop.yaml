@@ -30,7 +30,7 @@
       record: "{{ item.item }}.{{ domain_name }}" #mongodb.vnmurthy.online
       type: A
       ttl: 1
-      value: "{{ item.instance[0].private_ip_address }}"
+      value: "{{ item.instances[0].private_ip_address }}"
     loop: "{{ ec2_output.results }}"
 
   - name: create r53 record for frontend
