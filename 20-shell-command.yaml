@@ -8,5 +8,4 @@
     register: users_output
   - name: print users_output
     debug:
-      mgs: "{{ users_output }}"
-      
+      msg: "{{ users_output }}"
