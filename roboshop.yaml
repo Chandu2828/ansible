@@ -2,9 +2,10 @@
   hosts: local
   connection: local
   vars:
-    instances: ["mongodb", "redis", "mysql", "rabbitmq"]
+    instances: ["mongodb", "redis", "mysql", "rabbitmq", "frontend"]
     image_id: ami-0220d79f3f480ecf5
     domain_name: vnmurthy.online
+    input: action
   tasks:
   - name: create ec2 instances
     amazon.aws.ec2_instance:
@@ -16,6 +17,7 @@
       - roboshop-common
     loop: "{{ instances }}"
     register: ec2_output
+    when: input == "create"
   # - name: print ec2_output
   #   debug:
   #     msg: "{{ ec2_output }}"
@@ -33,6 +35,7 @@
       value: "{{ item.instances[0].private_ip_address }}"
       overwrite: true
     loop: "{{ ec2_output.results }}"
+    when: input == "create"
 
   - name: create r53 record for frontend
     amazon.aws.route53:
@@ -44,4 +47,31 @@
       value: "{{ item.instances[0].public_ip_address }}"
       overwrite: true
     loop: "{{ ec2_output.results }}" 
-    when: item.item == "frontend"
+    # when: item.item == "frontend"
+    when: 
+    - item.item == "frontend"
+    - input == "create"
+
+  - name: delete r53 records
+    amazon.aws.route53:
+      state: absent
+      zone: "{{ domain_name }}"
+      record: "{{ item }}.{{ domain_name }}"
+      ttl: 1
+      type: A
+    loop: "{{ ec2_output.results }}"
+    when: input == "delete"
+
+  - name: delete r53 record for frontend
+    amazon.aws.route53:
+      state: absent
+      zone: "{{ domian_name }}"
+      record: "{{ domain_name }}"
+      ttl: 1
+      type: A
+    loop: "{{ instances }}"
+    when:
+    - input == "delete"
+    - item == "frontend"
+
+
