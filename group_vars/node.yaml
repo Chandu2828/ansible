@@ -2,3 +2,8 @@ COURSE: "Ansible from group_vars"
 TRAINER: "Sivakumar"
 DURATION: "10HRS"
 # full_name: "Chandu from inventory group-vars"
+# Instead of mentioning the variables in the inventory file we can mention as a group_vars.
+# So that the hosts under node group will get this vars.
+# Ansible recommends this process rather than mentioning in inventory.ini.
+# The format is create a group_var directory and mentioned your <group_name>.yaml
+
