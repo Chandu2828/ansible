@@ -6,3 +6,4 @@
     debug:
       msg: "Hello {{ name }}"
 
+# ansible-playbook -i inventory.ini -e "name=Purna Chand" 09-vars.yaml

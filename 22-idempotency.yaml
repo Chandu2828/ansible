@@ -6,3 +6,5 @@
   - name: create expense user
     user:
       name: expense # useradd expense
+
+# You will get the idempotency only when you use ansible modules. Otherwise you need to handle manually. 

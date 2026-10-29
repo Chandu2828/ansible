@@ -1,5 +1,6 @@
 - name: print gather facts
   hosts: node
+  # gather_facts: no 
   tasks:
   - name: print gathered facts
     debug:

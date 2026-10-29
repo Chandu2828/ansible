@@ -3,9 +3,9 @@
   connection: local
   tasks:
   - name: command test
-    # command: cat /etc/passwd | grep root
+    # command: cat /etc/passwd | grep root (Here as we are using "|" command will throw error)
     shell: cat /etc/passwd | grep root
-    register: users_output
+    register: users_output # takes the output into variable
 
   - name: print users_output
     debug:
@@ -14,4 +14,7 @@
   - name: list files
     # command: ls -ltr > /tmp/files.txt
     shell: ls -ltr > /tmp/files.txt
-    
+
+# Ansible allows you to run linux commands if there is no module available
+# Shell module → we get complete shell env like variables, pipes(|), redirections(>>) etc.
+# Command module → we don’t get anything, just the command will be executed. 

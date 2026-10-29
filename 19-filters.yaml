@@ -28,29 +28,58 @@
   - name: print the string as list
     debug:
       msg:  "Topics are: {{ topics | split (',') }}"
-  
+  # output = "Topics are: ['Linux', 'shell', 'Ansbile', 'Terrafomr']"
+
   - name: set default value
     debug:
       msg: "Hi {{ GREETING | default ('Good Morning') }}"
+  # If you don't mention anything for greeting by default it will take Good Morning
 
   - name: convert map to list
     debug:
       msg: "{{ tagMap | dict2items }}"
+  # output: 
+  #  [
+  #     {
+  #       "key": "name",
+  #       "value": "Ansible"        
+  #     },
+  #     {
+  #       "key": "project",
+  #       "value": "roboshop"
+  #     },
+  #     {
+  #       "key": "environment",
+  #       "value": "dev"
+  #     }
+  #   ]
+
   - name: convert list to map
     debug:
       msg: "{{ tagsList | items2dict }}"
+  # output:
+      # "name": "Ansible"
+      # "project": "roboshop"
+      # "environment": "dev"
+
   - name: convert to uppercase
     debug:
       msg: "{{ full_name | upper }}"
+  # output: PURNA CHAND
+
   - name: convert to lowercase
     debug:
       msg: "{{ full_name | lower }}"
+    # output: purna chand
+
   - name: check ipv4 ip_address_1
     debug:
-      msg: "{{ ip_address_1 | ansible.utils.ipv4 }}"
-    # ansible.utils.ipv4 require netaddr package, use pip3 install netaddr command to install the package
+      msg: "{{ ip_address_1 | ansible.utils.ipv4 }}" # output will be false as it is valid
+    # To check if the ipv4 address is valid or not
+    # ansible.utils.ipv4 require netaddr package, use "# pip3 install netaddr" command to install the package
   - name: check ipv4 ip_address_2
     debug:
       msg: "{{ ip_address_2 | ansible.utils.ipv4 }}"
+  # output will be True as it is valid 
 
 

@@ -14,4 +14,5 @@
     #   full_name: "Chandu from task level"
     debug:
       msg: "Hi {{ full_name}}"
-      
+
+# ansible-playbook -i inventory -e ansible_user=ec2-user -e ansible_password=DevOps321 -e "full_name='Chandu from cmd args'" 10-vars-preference.yaml

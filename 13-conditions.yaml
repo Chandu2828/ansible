@@ -8,6 +8,7 @@
 #     debug:
 #       msg: "Yes, Ansible took more than 5 sessions"
 #     when: live_sessions > 5
+# As the above condition is false it will be skipped and below condition will be executed
 
 - name: check number of live is_live_sessions
   hosts: local
